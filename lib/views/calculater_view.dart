@@ -57,7 +57,8 @@ class _CalculaterViewState extends State<CalculaterView> {
           try {
             Expression exp = Parser().parse(input);
             double result = exp.evaluate(EvaluationType.REAL, ContextModel());
-            output = result.toStringAsFixed(10);
+            output = result.toStringAsFixed(2);
+
             if (output == 'Infinity') {
               output = 'Divide by zero';
             }
@@ -126,6 +127,7 @@ class _CalculaterViewState extends State<CalculaterView> {
                   child: Text(
                     output,
                     maxLines: 1,
+                    textAlign: TextAlign.end,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
                       fontSize: 48,
