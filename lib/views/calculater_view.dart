@@ -56,8 +56,8 @@ class _CalculaterViewState extends State<CalculaterView> {
           input = '0$input';
           try {
             Expression exp = Parser().parse(input);
-            output =
-                exp.evaluate(EvaluationType.REAL, ContextModel()).toString();
+            double result = exp.evaluate(EvaluationType.REAL, ContextModel());
+            output = result.toStringAsFixed(10);
             if (output == 'Infinity') {
               output = 'Divide by zero';
             }
