@@ -11,8 +11,8 @@ class CalculaterView extends StatefulWidget {
 }
 
 class _CalculaterViewState extends State<CalculaterView> {
-  String input = '0';
-  String output = '0';
+  String input = '';
+  String output = '';
 
   void pressButton(String value) {
     if (value == 'C') {
@@ -99,12 +99,16 @@ class _CalculaterViewState extends State<CalculaterView> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(10),
-                child: Text(
-                  input,
-                  style: const TextStyle(
-                    fontSize: 48,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w400,
+                child: Expanded(
+                  child: Text(
+                    input,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      fontSize: 48,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ),
               ),
@@ -118,11 +122,15 @@ class _CalculaterViewState extends State<CalculaterView> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text(
-                  output,
-                  style: const TextStyle(
-                    fontSize: 48,
-                    color: kResultColor,
+                Expanded(
+                  child: Text(
+                    output,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      fontSize: 48,
+                      color: kResultColor,
+                    ),
                   ),
                 ),
               ],
