@@ -58,6 +58,9 @@ class _CalculaterViewState extends State<CalculaterView> {
             Expression exp = Parser().parse(input);
             output =
                 exp.evaluate(EvaluationType.REAL, ContextModel()).toString();
+            if (output == 'Infinity') {
+              output = 'Divide by zero';
+            }
             input = '';
           } catch (e) {
             output = 'error';
@@ -66,7 +69,9 @@ class _CalculaterViewState extends State<CalculaterView> {
       });
     } else if (value == 'Ans') {
       setState(() {
-        if (output.isNotEmpty) {
+        if (output.isNotEmpty &&
+            output != 'error' &&
+            output != 'Divide by zero') {
           input = output;
           output = '';
         }
