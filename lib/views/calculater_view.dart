@@ -138,13 +138,13 @@ class _CalculaterViewState extends State<CalculaterView> {
             children: [
               CustomCalcButton(
                 calcBtn: 'C',
-                txtColor: Colors.black,
+                txtColor: const Color(0xff343434),
                 backgroundColor: kDeleteColor,
                 onTap: pressButton,
               ),
               CustomCalcButton(
                 calcBtn: 'Del',
-                txtColor: Colors.black,
+                txtColor: const Color(0xff343434),
                 backgroundColor: kDeleteColor,
                 onTap: pressButton,
               ),
