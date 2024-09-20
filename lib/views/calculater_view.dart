@@ -82,8 +82,8 @@ class _CalculaterViewState extends State<CalculaterView> {
         if (value == '.') {
           // 5.3 + 3.2
           var listNumbers = input.split(RegExp('[+-/*%]')); // [5.3 , 3.2]
-          var lastNumber = listNumbers.isNotEmpty ? listNumbers.last : ''; // 3.2
-
+          var lastNumber =
+              listNumbers.isNotEmpty ? listNumbers.last : ''; // 3.2
           if (lastNumber.contains('.')) {
             return; // last number contain .
           }
